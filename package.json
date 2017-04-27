@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "manojkumar-g",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js --dev",
+    "prod": "rimraf dist && webpack --config config/webpack/prod.js && node index.js"
+  },
   "devDependencies": {
     "babel-loader": "^7.0.0",
     "css-loader": "^0.28.0",
