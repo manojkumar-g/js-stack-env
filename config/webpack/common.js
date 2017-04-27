@@ -3,8 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var helpers = require('../helpers')
 let conf = {
   entry: {
-    'polyfills': './src/polyfills.js',
-    'vendor': './src/vendor.js',
+    'vendor': ['./src/vendor.js','./src/polyfills.js'],
     'app': './src/index.js'
   },
   resolve: {
@@ -18,7 +17,13 @@ let conf = {
         loaders: [
           {
             loader: 'babel-loader',
-            options: { presets:['env','react'] }
+            options: {
+              presets:[
+                ["env", {"modules": false}],
+                "react"],
+            plugins: [
+              "react-hot-loader/babel"]
+            }
           }
         ]
       },
@@ -38,14 +43,9 @@ let conf = {
         loader: 'html-loader'
 
       }
-
-
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
-    }),
     new HtmlWebpackPlugin({
       template: './index.html'
     })

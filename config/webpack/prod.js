@@ -16,6 +16,12 @@ module.exports = webpackMerge(commonConfig, {
     chunkFilename: '[id].[hash].chunk.js'
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'vendor.[chunkhash].js',
+            minChunks: Infinity
+        }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'meta', chunks: ['vendor'], filename: 'meta.[hash].js' }),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       mangle: {
