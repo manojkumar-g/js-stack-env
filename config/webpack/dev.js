@@ -9,7 +9,7 @@ var webpack = require('webpack')
   entry : {
     app:['webpack-hot-middleware/client',
           'react-hot-loader/patch',
-          helpers.root('/src/index.js')],
+          helpers.root('/src/client/index.js')],
   },
   output: {
     path: helpers.root('dist'),

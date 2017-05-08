@@ -3,8 +3,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var helpers = require('../helpers')
 let conf = {
   entry: {
-    'vendor': ['./src/vendor.js','./src/polyfills.js'],
-    'app': './src/index.js'
+    'vendor': ['./src/client/vendor.js','./src/client/polyfills.js'],
+    'app': './src/client/index.js'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.styl']

@@ -30,6 +30,7 @@
     "node-static": "^0.7.9",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-router-dom": "next",
     "rimraf": "^2.6.1",
     "stylus": "^0.54.5",
     "webpack-merge": "^4.1.0"
