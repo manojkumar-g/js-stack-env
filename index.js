@@ -21,15 +21,19 @@ if(isDevelopment){
       }
   }))
   app.use(require('webpack-hot-middleware')(compiler))
+
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '/static/index.html'))
+  })
 }
 else{
   app.use(express.static(__dirname + '/dist'));
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '/dist/index.html'))
+  })
 }
 
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, '/dist/index.html'))
-})
 
 app.listen(3000, function(err) {
   if (err) {

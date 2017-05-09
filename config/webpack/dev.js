@@ -12,7 +12,7 @@ var webpack = require('webpack')
           helpers.root('/src/client/index.js')],
   },
   output: {
-    path: helpers.root('dist'),
+    path: helpers.root('static'),
     publicPath: '/',
     filename: '[name].js',
     chunkFilename: '[id].chunk.js'
