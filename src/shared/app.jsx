@@ -3,6 +3,8 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import style from './style.styl'
+
 const Home = () => (
   <div>
     <h2>Home</h2>

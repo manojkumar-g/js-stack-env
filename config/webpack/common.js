@@ -1,6 +1,11 @@
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var helpers = require('../helpers')
+const jeet = require('jeet');
+const rupture = require('rupture');
+const axis = require('axis');
+const autoprefix = require('autoprefixer-stylus');
+
 let conf = {
   entry: {
     'vendor': ['./src/client/vendor.js','./src/client/polyfills.js'],
@@ -34,7 +39,9 @@ let conf = {
           'css-loader',
           {
             loader: 'stylus-loader',
-
+            options: {
+              use: [jeet(),rupture(),axis(),autoprefix()]
+            }
           },
         ],
     },
